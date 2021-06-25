@@ -31,7 +31,7 @@ class _CompanyUserListWidgetState extends State<CompanyUserListWidget> {
     return [];
   }*/
 
-  IIMSDataImpl iimsDataImpl = IIMSDataImpl();
+  IIMSDataImpl iimsDataImpl = IIMSDataImpl.inst;
 
   @override
   void initState() {

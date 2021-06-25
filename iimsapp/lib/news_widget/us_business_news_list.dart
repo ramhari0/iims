@@ -17,7 +17,7 @@ class _UsBusinessNewsListWidgetState extends State<UsBusinessNewsListWidget> {
 
   @override
   void initState() {
-    _iimsDataImpl = IIMSDataImpl();
+    _iimsDataImpl = IIMSDataImpl.inst;
     super.initState();
   }
 

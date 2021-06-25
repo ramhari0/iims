@@ -7,7 +7,18 @@ import 'package:http/http.dart' as http;
 class IIMSDataImpl implements IMMSSCollegeContract {
   late IIMSDataSource iimsDataSource;
 
-  IIMSDataImpl() : iimsDataSource = IIMSDataSource(httpClient: http.Client());
+  String _fruitsName = "Apple";
+
+  String get getFruitName => _fruitsName;
+
+  //IIMSDataImpl() : iimsDataSource = IIMSDataSource(httpClient: http.Client());
+
+
+  IIMSDataImpl._internal();
+
+  static final IIMSDataImpl _singleton = IIMSDataImpl._internal();
+
+  static get inst => _singleton;
 
   @override
   Future<List<CompanyUser>>? getStudentData() {
@@ -18,5 +29,4 @@ class IIMSDataImpl implements IMMSSCollegeContract {
   Future<UsBusinessNews>? getUsBusinessNews() {
     return iimsDataSource.fetchUsBusinessNews();
   }
-
 }
